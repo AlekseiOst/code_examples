@@ -1,1 +1,0 @@
-parsing - Парсинг API, HTML. Работа с MongoDB, Scrapy и Selenium.
