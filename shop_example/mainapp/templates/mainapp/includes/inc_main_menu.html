@@ -1,0 +1,32 @@
+{% load static %}
+<div class="header">
+    <a href="{% url 'main' %}">
+        <img src="{% static 'img/logo.svg' %}" alt="logo">
+    </a>
+    <ul class="menu">
+        <li class="menu-list menu-list-1">
+            <a href="{% url 'main' %}" class="menu-link {% if request.resolver_match.url_name == 'main' %}menu-link-active{% endif %}">HOME</a>
+        </li>
+        <li class="menu-list menu-list-2">
+            <a href="{% url 'products:index' %}" class="menu-link {% if request.resolver_match.namespace == 'products' %}menu-link-active{% endif %}">PRODUCTS</a>
+        </li>
+        <li class="menu-list menu-list-5">
+            <a href="{% url 'contact' %}" class="menu-link {% if request.resolver_match.url_name == 'contact' %}menu-link-active{% endif %}">CONTACT</a>
+        </li>
+        <li class="menu-list menu-list-6">
+            <a href="#" class="menu-link"><img src="{% static "img/search.svg" %}" alt="search"></a>
+        </li>
+        {% if user.is_authenticated %}
+            <li class="menu-list menu-list-6">
+                <a href="{% url 'auth:edit' %}" class="menu-link">{{ user }}</a>
+            </li>
+            <li class="menu-list menu-list-6">
+                <a href="{% url 'auth:logout' %}" class="menu-link">ВЫХОД</a>
+            </li>
+        {% else %}
+            <li class="menu-list menu-list-6">
+                <a href="{% url 'auth:login' %}" class="menu-link">ВХОД</a>
+            </li>
+        {% endif %}
+    </ul>
+</div>

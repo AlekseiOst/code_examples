@@ -1,0 +1,71 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block menu %}
+    <div class="header-all header-product-details">
+        {% include 'mainapp/includes/inc_main_menu.html' %}
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="products-details">
+{#        <ul class="products-details-menu">#}
+{#            <li class="product-menu-list products-details-menu-list product-menu-list-active"><a href="#">ALL</a></li>#}
+{#            <li class="product-menu-list products-details-menu-list"><a href="#">HOME</a></li>#}
+{#            <li class="product-menu-list products-details-menu-list"><a href="#">OFFICE</a></li>#}
+{#            <li class="product-menu-list products-details-menu-list"><a href="#">FURNITURE</a></li>#}
+{#            <li class="product-menu-list products-details-menu-list"><a href="#">MODERN</a></li>#}
+{#            <li class="product-menu-list products-details-menu-list"><a href="#">CLASSIC</a></li>#}
+{#        </ul>#}
+        <div class="product-details-container">
+            <div class="product-images">
+{#                <img class="product-image" src="/static/img/product-20.jpg" alt="product-20">#}
+                <img class="product-image" src="{{ product.image.url }}" alt="product-20">
+{#                <div class="mini-image">#}
+{#                    <img src="/static/img/product-20-1.jpg" alt="product-20-1">#}
+{#                    <img src="/static/img/product-20-2.jpg" alt="product-20-2">#}
+{#                    <img src="/static/img/product-20-3.jpg" alt="product-20-3">#}
+{#                </div>#}
+            </div>
+            <div class="product-details-content">
+                <h2>{{ product.name|upper }}</h2>
+{#                <h6>HOT DEAL</h6>#}
+{#                <h4>&#36; <span>36.7</span>/sq</h4>#}
+                <h4>{{ product.price }} руб.</h4>
+                <a href="#" class="button button-product">ORDER US </a>
+                <p>{{ product.description }}</p>
+{#                <p>#}
+{#                    The majesty of Mountains - Ugmonk style.<br>#}
+{#                </p>#}
+{#                <p>#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore<br>#}
+{#                </p>#}
+{#                <p>#}
+{#                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut#}
+{#                    aliquip ex ea commodo consequat.<br>#}
+{#                </p>#}
+{#                <p>#}
+{#                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla#}
+{#                    pariatur.#}
+{#                    Excepteur sint occaecat cupidatat non proident.<br>#}
+{#                </p>#}
+{#                <p>#}
+{#                    sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste#}
+{#                    natus#}
+{#                    error sit voluptatem accusantium#}
+{#                    <!-- doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.-->#}
+{#                </p>#}
+            </div>
+        </div>
+    </div>
+    
+    <div class="related-products">
+        <div class="related-products-header">
+            <h2 class="related-products-h2">Related Products</h2>
+            <a href="#" class="explore-all related-products-explore-all">EXPLORE ALL </a>
+        </div>
+        <div class="related-products-container">
+            <a href="#" class="products-content"><img src="/static/img/product-11.jpg" alt="product"></a>
+            <a href="#" class="products-content"><img src="/static/img/product-10.jpg" alt="product"></a>
+            <a href="#" class="products-content"><img src="/static/img/product-9.jpg" alt="product"></a>
+        </div>
+    </div>
+{% endblock %}

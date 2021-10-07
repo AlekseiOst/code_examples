@@ -1,0 +1,11 @@
+{% extends 'authapp/base.html' %}
+
+{% block content %}
+    <form method="post" class="auth-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ reg_form.as_p }}
+        <br>
+        <input class="field-form" type="submit" value="Регистрация">
+    </form>
+    <a href="{% url 'auth:login' %}" class="field-form">Вход</a>
+{% endblock %}
